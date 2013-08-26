@@ -1,0 +1,99 @@
+<html>
+<head>
+  <title>Slide Demo</title>
+  <link href="http://localhost:3000/build/build.css/" rel="stylesheet"/>
+</head>
+<body>
+  <div class="Slideshow Slideshow--fade">
+    <div class="Slideshow-slides">
+      <div class="Slideshow-slide" slide>
+        <img src="http://placecage.com/700/300"/>
+      </div>
+      <div class="Slideshow-slide" slide>
+        <img src="http://placecage.com/700/301"/>
+      </div>
+      <div class="Slideshow-slide" slide>
+        <img src="http://placecage.com/700/302"/>
+      </div>
+      <div class="Slideshow-slide" slide>
+        <img src="http://placecage.com/700/303"/>
+      </div>
+      <div class="Slideshow-slide" slide>
+        <img src="http://placecage.com/700/304"/>
+      </div>
+    </div>
+    <button class="Slideshow-next" on-click="next">Next</button>
+    <button class="Slideshow-prev" on-click="previous">Previous</button>
+    <div class="Slideshow-indicators">
+      <div class="Slideshow-indicator" indicator="0"></div>
+      <div class="Slideshow-indicator" indicator="1"></div>
+      <div class="Slideshow-indicator" indicator="2"></div>
+      <div class="Slideshow-indicator" indicator="3"></div>
+      <div class="Slideshow-indicator" indicator="4"></div>
+    </div>
+  </div>
+  <style>
+    body {
+      background: #eee;
+    }
+    .Slideshow {
+      width: 700px;
+      margin: 200px auto;
+      background: #ddd;
+    }
+    .Slideshow-slides {
+      width: 700px;
+      height: 300px;
+      position: relative;
+      overflow: hidden;
+    }
+    .Slideshow-slide {
+      height: 300px;
+      width: 700px;
+    }
+    .Slideshow-slide:nth-child(1) {
+      background: blue;
+    }
+    .Slideshow-slide:nth-child(2) {
+      background: red;
+    }
+    .Slideshow-slide:nth-child(3) {
+      background: green;
+    }
+    .Slideshow-slide:nth-child(4) {
+      background: yellow;
+    }
+    .Slideshow-slide:nth-child(5) {
+      background: teal;
+    }
+    .Slideshow-next {
+      position: absolute;
+      right: 0;
+      top: -30px;
+    }
+    .Slideshow-prev {
+      position: absolute;
+      top: -30px;
+    }
+    .Slideshow-indicators {
+      position: absolute;
+      bottom: -40px;
+    }
+    .Slideshow-indicator {
+      height: 20px;
+      width: 20px;
+      background: #999;
+      display: inline-block;
+    }
+    .Slideshow-indicator.active {
+      background: #333;
+    }
+  </style>
+  <script src="http://localhost:3000/build/build.js/"></script>
+  <script>
+    var slideshow = require('slideshow');
+    var el = document.querySelector('.Slideshow');
+    slideshow(el).show(3);
+  </script>
+</body>
+</html>

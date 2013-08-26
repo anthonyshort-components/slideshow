@@ -1,13 +1,22 @@
 {
   "name": "slideshow",
   "scripts": [
-    "index.js"
+    "index.js",
+    "lib/slide.js",
+    "lib/slides.js"
+  ],
+  "styles": [
+    "index.css"
   ],
   "dependencies": {
+    "component/emitter": "*",
+    "component/reactive": "*",
+    "anthonyshort/after-transition": "*",
     "component/classes": "*",
+    "anthonyshort/observable": "*",
+    "yields/indexof": "*",
     "component/event": "*",
-    "anthonyshort/css-emitter": "0.1.0",
-    "component/emitter": "*"
+    "timoxley/next-tick": "*"
   },
   "development": {
     "component/assert": "*"

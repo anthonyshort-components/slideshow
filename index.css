@@ -1,0 +1,58 @@
+.Slideshow {
+  position: relative;
+}
+
+.Slideshow-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/**
+ * This is used to reposition the slides
+ * without triggering animations
+ */
+
+.Slideshow-slide.hide {
+  transition: none !important;
+  display: none !important;
+}
+
+/**
+ * Slide Effect
+ */
+
+.Slideshow--slide .Slideshow-slide {
+  transition: left 0.5s linear;
+  display: none;
+}
+
+.Slideshow--slide .Slideshow-slide.active {
+  left: 0;
+  display: block;
+}
+
+.Slideshow--slide .Slideshow-slide.next {
+  left: 100%;
+  display: block;
+}
+
+.Slideshow--slide .Slideshow-slide.previous {
+  left: -100%;
+  display: block;
+}
+
+/**
+ * Fade Effect
+ */
+
+.Slideshow--fade .Slideshow-slide {
+  opacity: 0;
+  transition: opacity 1s linear;
+}
+
+.Slideshow--fade .Slideshow-slide.active {
+  opacity: 1;
+}
